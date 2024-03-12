@@ -2,25 +2,5 @@
     {
         "title": "Test Title",
         "text": "Test text"
-    },
-    {
-        "title": "Create the app",
-        "text": "make it work",
-        "id": "967bd6db-010e-4ec0-9913-d206a19b25e6"
-    },
-    {
-        "title": "Book of Facts",
-        "text": "Not great",
-        "id": "8c1ffdbf-59bf-492b-b9dc-26224bc7d806"
-    },
-    {
-        "title": "Beep boop",
-        "text": "bop bep",
-        "id": "95a445bf-d9fd-4607-b468-36b64d48db84"
-    },
-    {
-        "title": "blarp",
-        "text": "brap",
-        "id": "368d4b65-a1ac-4f88-8b69-3924869112cd"
     }
 ]
