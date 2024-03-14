@@ -34,12 +34,22 @@ notes.post("/", (req, res) => {
 // DELETE Route for a note
 notes.delete("/:id", (req, res) => {
 	const { id } = req.params;
+	if (!id) {
+		res.status(400).send("No id provided. Please provide a valid id.");
+		return "Error";
+	}
 	readFromFile("./db/db.json").then((data) => {
 		const array = JSON.parse(data);
-		const filteredArray = array.filter((obj) => obj.id !== id);
-		writeToFile("./db/db.json", filteredArray);
+		const found = array.find((element) => element.id === id);
+		if (!found) {
+			res.status(404).send("Note not found.");
+			return Error("Note not found.");
+		} else {
+			const filteredArray = array.filter((obj) => obj.id !== id);
+			writeToFile("./db/db.json", filteredArray);
+			res.json(`Note with ID ${id} has been deleted.`);
+		}
 	});
-	res.json(`Note with ID ${id} has been deleted.`);
 });
 
 module.exports = notes;
